@@ -1,0 +1,9 @@
+body{
+    background: rgb(217, 54, 62);
+    background: linear-gradient(90deg, rgb(217, 54, 22) 0%, rgb(230, 63, 230) 61%),rgb(255, 0, 221) 100%;
+}
+
+
+h1,h2,h3,h4,h5,h6 ,p,span,strike{
+    font-family: "Monstserrat",sans-serif;
+}

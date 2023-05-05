@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     #  "corsheaders",
     "debug_toolbar",
      "todoapp",
+     
+     "frontendapp.apps.FrontendappConfig"
 ]
 
 

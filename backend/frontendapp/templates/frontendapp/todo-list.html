@@ -15,18 +15,40 @@
     <!-- google api  -->
     <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Tangerine">
 
+
     <link rel="stylesheet" href="{% static 'css/customcss.css'%}">
 </head>
 <body>
     <h2>helo</h2>
 
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-          </div>
-        </nav>
-      </div>
+
+    <div id="task-container">
+        <div id="form-wrapper">
+            <form id="form">
+                <div class="flex-wrapper">
+                    <div style="flex: 6">
+                        <input id="title" class="form-control" type="text" name="title" placeholder="Add task">
+                    </div>
+                    <div style="flex: 1">
+                        <input id="submit" class="btn" type="submit" >
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="list-wrapper">
+                
+        </div>	
+    </div>
+
+</div>
+
+
+
 
 </body>
+<script src="{% static 'css/custom.js' %}"></script>
+
+
 </html>

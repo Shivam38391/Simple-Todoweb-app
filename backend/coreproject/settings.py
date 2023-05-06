@@ -42,7 +42,7 @@ INSTALLED_APPS = [
      "django_filters",
      
     #  "corsheaders",
-    "debug_toolbar",
+    # "debug_toolbar",
      "todoapp",
      
      "frontendapp.apps.FrontendappConfig"
@@ -57,7 +57,7 @@ MIDDLEWARE = [
                                     # configration for coresheader
     # "corsheaders.middleware.CorsMiddleware",
      #debug medalware 
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
     
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -149,8 +149,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 
-INTERNAL_IPS = [
-    # ...
-    "127.0.0.1",
-    # ...
-]
+# INTERNAL_IPS = [
+#     # ...
+#     "127.0.0.1",
+#     # ...
+# ]

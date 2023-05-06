@@ -6,7 +6,7 @@ from django.db import models
 class Todo(models.Model):
     
     title = models.CharField(max_length=250,null=False)  #this cannot be null
-    description = models.TextField(max_length=250, null=True)
+    description = models.TextField(max_length=250, null=True, blank=True)
     status = models.BooleanField(default=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True, blank=True)
     

@@ -25,7 +25,8 @@
 
 //function to get csrf token to send csrf in ajax request		
 
-
+// for active record
+var activeItem = null; 
 
 buildList()
 
@@ -80,10 +81,13 @@ function buildList(){
 
 		// 2ndloop
 		for (var i in list){
-			var editbtn = document.getElementsByClassName(`edit`)[i]
-			editbtn.addEventListener("click", function(){
-				editItem(list[i]);
-			})
+			var editbtn = document.getElementsByClassName('edit')[i]
+
+			editbtn.addEventListener("click", (function(item){
+				return function(){
+					editItem(item);
+				}
+			})(list[i]));
 		}
 
     })
@@ -95,20 +99,26 @@ function buildList(){
 
 var form = document.getElementById('form-wrapper')
 
-
-
-
 form.addEventListener('submit', function(e){
 	//preventing the default behaviour on submitting
-	// e.preventDefault()
-console.log(csrftoken)
+	e.preventDefault()
+	console.log(csrftoken)
+
+
+	var url = "http://127.0.0.1:8000/api/todo/"
+	var method = "POST"
+
+	if (activeItem != null){
+		var url =  `http://127.0.0.1:8000/api/todo/${activeItem.id}/`
+		var method = "PUT"
+
+		activeItem = null
+	}
 
 	var title = document.getElementById('title').value
 
-	var url = "http://127.0.0.1:8000/api/todo/"
-
 	fetch(url, 
-		{method: 'POST', 
+		{method: method, 
 		headers: {'Content-Type': 'application/json', 
 		'X-CSRFToken': csrftoken,},
 		//sending the data to server in json format
@@ -126,8 +136,16 @@ console.log(csrftoken)
 
 })
 
+
+
+
+
+//for edit items
 function editItem(item) {
 	console.log(`editItem ${item.title}`)
+	activeItem = item
+	//to fill the form with activeitems
+	document.getElementById("title").value = activeItem.title
 }
 
 

@@ -13,18 +13,20 @@ django, python, DRF, JAVAscript, postrasesql, bootstrap
 
 ## Installation
 Clone the repository
+# run following commands in terminal in (backend)
+
 
 ``` bash
-# after cloning.
 ## create virtual environment
 python -m venv env
 env\scripts\activate
 
-# run following commands in terminal in backend
-
+# run following commands in terminal in (backend)
 pip install -r requirements.txt
+```
 
 ### If you dont want to use the sqlite3 database , please add your postgrasesqual configration in .env-sample , otherwise you can go for sqlite3 database
+``` bash
 python manage.py migrate
 python manage.py makemigrations
 ```

@@ -262,16 +262,47 @@ function deleteItem(item) {
 
 
 
-// const request =  fetch('http://127.0.0.1:8000/api/todo/')
-// .then(function (response) {
-//     console.log(response) 
-//     return response.json(); 
-// })
-// .then(function (data){
-//     console.log(data); 
 
-// })
 
-  // distructuring is done here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,8 +43,7 @@ INSTALLED_APPS = [
      'rest_framework',
      "django_filters",
      
-    #  "corsheaders",
-    # "debug_toolbar",
+    "debug_toolbar",
      "todoapp",
      
      "frontendapp.apps.FrontendappConfig"
@@ -53,11 +54,8 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
 
-    
-                                    # configration for coresheader
-    # "corsheaders.middleware.CorsMiddleware",
      #debug medalware 
-    # "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -70,14 +68,6 @@ MIDDLEWARE = [
 # configration for coresheader
 
 
-# CORS_ALLOWED_ORIGINS = [
-#     "https://example.com",
-#     "https://sub.example.com",
-#     "http://localhost:8080",
-#     "http://127.0.0.1:9000",
-#     "http://127.0.0.1:8080",
-    
-# ]
 
 
 ROOT_URLCONF = "coreproject.urls"
@@ -110,6 +100,20 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+
+# configuration for postrase sql
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": config('DB_NAME'),
+#         "USER": config('DB_USER'),
+#         "PASSWORD":config('DB_PASSWORD'),
+#         "HOST": config('DB_HOST'),
+#     }
+# }
+
 
 
 # Password validation
@@ -149,8 +153,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 
-# INTERNAL_IPS = [
-#     # ...
-#     "127.0.0.1",
-#     # ...
-# ]
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]

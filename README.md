@@ -36,3 +36,5 @@ python manage.py makemigrations
 # it means you have installed this project successfully.
 python manage.py runserver
 ```
+
+challenge I face Making this project is JavaScript , homestly I've a very less experienced with JavaScript and overcome problems with the help of google, youtube and chatgpt

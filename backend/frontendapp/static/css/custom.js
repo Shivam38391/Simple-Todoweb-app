@@ -82,12 +82,22 @@ function buildList(){
 		// 2ndloop
 		for (var i in list){
 			var editbtn = document.getElementsByClassName('edit')[i]
+			var deletebtn = document.getElementsByClassName('delete')[i]
+
 
 			editbtn.addEventListener("click", (function(item){
 				return function(){
 					editItem(item);
 				}
 			})(list[i]));
+
+// method for delete
+			deletebtn.addEventListener("click", (function(item){
+				return function(){
+					deleteItem(item);
+				}
+			})(list[i]));
+
 		}
 
     })
@@ -148,7 +158,23 @@ function editItem(item) {
 	document.getElementById("title").value = activeItem.title
 }
 
+// -----------------------------------------------
+//for delete item
+function deleteItem(item) {
+	console.log("delet click")
 
+	fetch( `http://127.0.0.1:8000/api/todo/${item.id}/`,{
+
+	method : 'DELETE',
+	headers: {'Content-Type': 'application/json', 
+	'X-CSRFToken': csrftoken,}
+
+	}).then((response) => {
+		buildList()
+	})
+	
+
+}
 
 
 

@@ -37,4 +37,4 @@ python manage.py makemigrations
 python manage.py runserver
 ```
 
-challenge I face Making this project is JavaScript , homestly I've a very less experienced with JavaScript and overcome problems with the help of google, youtube and chatgpt
+challenge I face Making this project is JavaScript , honestly I've a very less experienced with JavaScript and to overcome this problem, i took the help of google, youtube and chatgpt

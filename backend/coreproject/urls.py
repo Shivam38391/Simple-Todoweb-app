@@ -24,5 +24,4 @@ urlpatterns = [
     path('', include('todoapp.urls')),
     path('front/', include('frontendapp.urls')),
 
-    
 ]

@@ -44,8 +44,8 @@ INSTALLED_APPS = [
      "django_filters",
      
     "debug_toolbar",
+    # myapp
      "todoapp",
-     
      "frontendapp.apps.FrontendappConfig"
 ]
 

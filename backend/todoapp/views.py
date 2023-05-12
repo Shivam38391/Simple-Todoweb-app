@@ -9,6 +9,7 @@ from .serializers import Todoserializer
 class TodoViewset(viewsets.ModelViewSet):
     
     queryset = Todo.objects.all()
+    # Todo.objects.all().order_by("-id")
     serializer_class = Todoserializer
     filter_backends = [
         DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter 
